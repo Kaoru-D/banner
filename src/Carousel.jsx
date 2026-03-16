@@ -22,10 +22,7 @@ function Carousel({ items }) {
 
     useEffect(() => {
         let slider = setInterval(() => {
-            setCurrentIndex((oldPerson) => {
-                const result = (oldPerson + 1) % people.length;
-                return result;
-            })
+            nextSlide();
         }, 10000);
         return () => clearInterval(slider);
     }, [currentIndex, people.length])
